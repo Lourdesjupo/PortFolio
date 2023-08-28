@@ -146,7 +146,6 @@ function App() {
           <section className='projects'>
             <h3 className='projects_title'>PROYECTOS</h3>
             <Cards />
-            {/* incluir imagenes */}
           </section>
           <section className='skills'>
             <h3 className='skills__title'>Skills</h3>

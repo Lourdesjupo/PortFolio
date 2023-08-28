@@ -1,20 +1,17 @@
 .about {
   margin: 100px 15px 100px 30px;
   &__title {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      font-weight: bold;
-      color: rgb(61, 58, 58);
-      display: inline-block;
-      border-bottom: 5px solid #88b2ff;
-      ;
-    }
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: rgb(61, 58, 58);
+    display: inline-block;
+    border-bottom: 5px solid #88b2ff;
+  }
   &__desc {
-  font-size: 1.8rem;
+    font-size: 1.8rem;
     color: rgb(121, 109, 109);
     margin-bottom: 20px;
     margin-right: 50px;
   }
-
 }
-

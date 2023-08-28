@@ -1,14 +1,12 @@
-.footer{
-display: flex;
-justify-content: end;
-background-color: #99a8c443;;
-}
-
-.footer__copy {
+.footer {
+  display: flex;
+  justify-content: end;
+  background-color: #99a8c443;
+  &__copy {
     font-size: 1.2rem;
-      color: rgb(121, 109, 109);
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-right: 50px;
-      
+    color: rgb(121, 109, 109);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+  }
 }

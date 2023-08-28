@@ -51,7 +51,7 @@ function Cards() {
     return (
       <li key={el.projectName} className='card'>
         <div className='card_img_container'>
-          <div className="title">
+          <div className='title'>
             <h4 className='card__title'>{el.projectName}</h4>
             <div className='card__icons'>
               <a
