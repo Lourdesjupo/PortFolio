@@ -41,7 +41,7 @@ function Cards() {
       projectName: 'Frases favoritas Friends',
       tech: '#HTML5, #SASS, #ReactJS',
       description:
-        'Filtra y añade tus frases favoritas de friends. Los datos se guardan en local.',
+        'Filtra y añade tus frases favoritas de Friends. Los datos se guardan en local.',
       github: 'https://github.com/Lourdesjupo/add-and-search-friends-quotes',
       link: 'https://lourdesjupo.github.io/webResponsive_example/',
     },

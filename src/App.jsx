@@ -33,7 +33,6 @@ function App() {
               alt='logo_lourdesJuarez'
             />
             <div>
-              {' '}
               <a
                 className={
                   buttonVisible === true ? 'none' : 'button button_cv_top'
@@ -116,9 +115,9 @@ function App() {
               <h1 className='hero__title'>DESARROLLADORA FRONT-END</h1>
               <p className='hero__desc'>
                 ¡Hola! Soy <span className='name'>Lourdes Juárez</span>,
-                programadora FrontEnd y futura fullStack. Echa un vistazo a mi{' '}
+                programadora FrontEnd y futura FullStack. Echa un vistazo a mi
                 <span span className='name'>
-                  curriculum.
+                  currículum.
                 </span>
               </p>
               <div>
@@ -129,7 +128,7 @@ function App() {
                   rel='noopener noreferrer'
                   ref={buttonRef}
                 >
-                  Ver curriculum
+                  Ver currículum
                 </a>
 
                 <a
@@ -240,12 +239,12 @@ function App() {
             </ul>
           </section>
           <section className='about'>
-            <h3 className='about__title'>Sobre mi</h3>
+            <h3 className='about__title'>Sobre mí</h3>
             <p className='about__desc'>
               En mi trayectoria profesional, he desempeñado roles fundamentales
               que abarcan desde la administración y digitalización de datos
               hasta la coordinación de proyectos y la gestión responsable de
-              ecommerce. Recientemente decidí dar un giro profesional
+              e-commerce. Recientemente, decidí dar un giro profesional
               completando un bootcamp que me ha proporcionado las habilidades
               técnicas necesarias para diseñar y crear webs responsivas.
             </p>
