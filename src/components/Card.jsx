@@ -45,6 +45,25 @@ function Cards() {
       github: 'https://github.com/Lourdesjupo/add-and-search-friends-quotes',
       link: 'https://lourdesjupo.github.io/webResponsive_example/',
     },
+    {
+      img: './card_generator.png',
+      projectName: 'Card Generator',
+      tech: '#HTML5, #SASS, #JavaScript',
+      description:
+        'Proyecto en grupo: Crea tu tarjeta de presentación de forma personalizada. Añade tu foto y perfil y compártelo en redes sociales.',
+      github: 'https://github.com/Lourdesjupo/Card-Generator-Adalab-Teamproject',
+      link: 'http://beta.adalab.es/project-promo-t-module-2-team-2/index.html',
+    },
+    {
+      img: './ChronoLogica.png',
+      projectName: 'ChronoLogica',
+      tech: '#ReactJS, #MUI, #Vite, #MySQL, #NodeJS, #ExpressJS',
+      description:
+        '⌛En proceso. Herramienta de productividad que permite registrar eventos, configurar alertas y trackear el tiempo de tus tareas.',
+      github:'https://github.com/Lourdesjupo/Chronologica',
+
+    },
+
   ];
 
   const getProjects = projects.map((el) => {
@@ -60,18 +79,18 @@ function Cards() {
                 target='_blank'
                 rel='noreferrer'
               >
-                {' '}
+
                 <img className='button__git' src='./github-alt.svg' alt='' />
               </a>
-              <a
+              {el.link && <a
                 className='card__link'
-                href={el.link}
+                href={el.link }
                 target='_blank'
                 rel='noreferrer'
               >
-                {' '}
+
                 <img className='button__link' src='./link-solid.svg' alt='' />
-              </a>
+              </a>}
             </div>
           </div>
           <img
