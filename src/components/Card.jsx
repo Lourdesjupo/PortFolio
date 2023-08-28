@@ -1,7 +1,7 @@
 function Cards() {
   const projects = [
     {
-      img: '/Anonymous.png',
+      img: './Anonymous.png',
       projectName: 'Anonymous Proxy',
       tech: '#HTML5, #CSS3',
       description:
@@ -10,7 +10,7 @@ function Cards() {
       link: 'https://lourdesjupo.github.io/webResponsive_example/',
     },
     {
-      img: '/Disney_Character.png',
+      img: './Disney_Character.png',
       projectName: 'Disney Character Database',
       tech: '#HTML5, SASS, #JavaScript',
       description:
@@ -19,7 +19,7 @@ function Cards() {
       link: 'https://lourdesjupo.github.io/Disney-Characters-Database/',
     },
     {
-      img: '/dados.png',
+      img: './dados.png',
       projectName: 'Dados y apuestas',
       tech: '#HTML5, #CSS3, #JavaScript',
       description:
@@ -28,7 +28,7 @@ function Cards() {
       link: 'https://lourdesjupo.github.io/Dados-y-apuestas/',
     },
     {
-      img: '/Rick_and_Morty.png',
+      img: './Rick_and_Morty.png',
       projectName: 'Buscador Rick And Morty',
       tech: '#HTML5, #SASS, #ReactJS',
       description:
@@ -37,7 +37,7 @@ function Cards() {
       link: 'https://lourdesjupo.github.io/webResponsive_example/',
     },
     {
-      img: '/Friends.png',
+      img: './Friends.png',
       projectName: 'Frases favoritas Friends',
       tech: '#HTML5, #SASS, #ReactJS',
       description:

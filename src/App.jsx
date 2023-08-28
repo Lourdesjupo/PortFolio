@@ -3,18 +3,13 @@ import '../src/styles/main.scss';
 import Cards from './components/Card';
 
 function App() {
-  const [buttonVisible, setButtonVisible] = useState('');
+  const [buttonVisible, setButtonVisible] = useState(true);
   const buttonRef = useRef(null);
 
   useEffect(() => {
     const verificarVisibilidadBoton = () => {
       const botonPos = buttonRef.current.getBoundingClientRect();
-      //console.log(buttonVisible)
-      //console.log(botonPos.top >= referenciaPos.top)
-      console.log(botonPos);
-      // console.log(botonPos.bottom <= referenciaPos.bottom)
-
-      if (botonPos.bottom >= 48 || botonPos.bottom >= 368) {
+      if (botonPos.bottom >= 90) {
         setButtonVisible(true);
       } else {
         setButtonVisible(false);
@@ -43,11 +38,11 @@ function App() {
                 className={
                   buttonVisible === true ? 'none' : 'button button_cv_top'
                 }
-                href='https://drive.google.com/file/d/1vlOsD3ZYGB4B_S_uw49SbPHlbnwbsVDy/view?usp=drive_link'
+                href='./Lourdes_juarez_FrontEnd.pdf'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Ver curriculum
+                CV
               </a>
               <a
                 className={
@@ -72,7 +67,7 @@ function App() {
                     className='icon mail'
                   >
                     <img
-                      src='/mail.svg'
+                      src='./mail.svg'
                       alt='mail: lourdes.jupo@gmail.com'
                       className='icon__img'
                     />
@@ -86,7 +81,7 @@ function App() {
                     className='icon'
                   >
                     <img
-                      src='/github-alt.svg'
+                      src='./github-alt.svg'
                       alt='Github/LourdesJupo'
                       className='icon__img'
                     />
@@ -100,7 +95,7 @@ function App() {
                     className='icon'
                   >
                     <img
-                      src='/linkedin.svg'
+                      src='./linkedin.svg'
                       alt='LinkedIn/Lourdes Juarez'
                       className='icon__img'
                     />
