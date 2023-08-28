@@ -124,7 +124,7 @@ function App() {
               <div>
                 <a
                   className='button button_cv'
-                  href='https://drive.google.com/file/d/1vlOsD3ZYGB4B_S_uw49SbPHlbnwbsVDy/view?usp=drive_link'
+                  href='./Lourdes_juarez_FrontEnd.pdf'
                   target='_blank'
                   rel='noopener noreferrer'
                   ref={buttonRef}
