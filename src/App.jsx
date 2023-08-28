@@ -115,9 +115,9 @@ function App() {
               <h1 className='hero__title'>DESARROLLADORA FRONT-END</h1>
               <p className='hero__desc'>
                 ¡Hola! Soy <span className='name'>Lourdes Juárez</span>,
-                programadora FrontEnd y futura FullStack. Echa un vistazo a mi
+                programadora FrontEnd y futura FullStack. Echa un vistazo a mi {''}
                 <span span className='name'>
-                  currículum.
+                currículum.
                 </span>
               </p>
               <div>
@@ -241,10 +241,8 @@ function App() {
           <section className='about'>
             <h3 className='about__title'>Sobre mí</h3>
             <p className='about__desc'>
-              En mi trayectoria profesional, he desempeñado roles fundamentales
-              que abarcan desde la administración y digitalización de datos
-              hasta la coordinación de proyectos y la gestión responsable de
-              e-commerce. Recientemente, decidí dar un giro profesional
+              En mi trayectoria profesional, he ocupado posiciones como coordinadora de proyecto, gestión de páginas
+              e-commerce en PrestaShop, digitalización e indexación de datos. Recientemente, decidí dar un giro profesional
               completando un bootcamp que me ha proporcionado las habilidades
               técnicas necesarias para diseñar y crear webs responsivas.
             </p>

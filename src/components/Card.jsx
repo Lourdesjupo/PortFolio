@@ -1,14 +1,6 @@
 function Cards() {
   const projects = [
-    {
-      img: './Anonymous.png',
-      projectName: 'Anonymous Proxy',
-      tech: '#HTML5, #CSS3',
-      description:
-        ' Creación de una página web responsive basada en un diseño proporcionado.',
-      github: 'https://github.com/Lourdesjupo/webResponsive_example',
-      link: 'https://lourdesjupo.github.io/webResponsive_example/',
-    },
+    
     {
       img: './Disney_Character.png',
       projectName: 'Disney Character Database',
@@ -19,31 +11,13 @@ function Cards() {
       link: 'https://lourdesjupo.github.io/Disney-Characters-Database/',
     },
     {
-      img: './dados.png',
-      projectName: 'Dados y apuestas',
-      tech: '#HTML5, #CSS3, #JavaScript',
-      description:
-        'Mini juego donde podrás poner a prueba tu suerte contra tu máquina. Apuesta una cantidad, elige un número y juega!',
-      github: 'https://github.com/Lourdesjupo/Dados-y-apuestas',
-      link: 'https://lourdesjupo.github.io/Dados-y-apuestas/',
-    },
-    {
       img: './Rick_and_Morty.png',
       projectName: 'Buscador Rick And Morty',
       tech: '#HTML5, #SASS, #ReactJS',
       description:
         'Busca tus personajes favoritos de Rick and Morty y averigua su procedencia y otros datos interesantes.',
       github: 'https://github.com/Lourdesjupo/Rick-and-Morty-Character-Finder',
-      link: 'https://lourdesjupo.github.io/webResponsive_example/',
-    },
-    {
-      img: './Friends.png',
-      projectName: 'Frases favoritas Friends',
-      tech: '#HTML5, #SASS, #ReactJS',
-      description:
-        'Filtra y añade tus frases favoritas de Friends. Los datos se guardan en local.',
-      github: 'https://github.com/Lourdesjupo/add-and-search-friends-quotes',
-      link: 'https://lourdesjupo.github.io/webResponsive_example/',
+      link: 'https://lourdesjupo.github.io/Rick-and-Morty-Character-Finder/',
     },
     {
       img: './card_generator.png',
@@ -62,6 +36,34 @@ function Cards() {
         '⌛En proceso. Herramienta de productividad que permite registrar eventos, configurar alertas y trackear el tiempo de tus tareas.',
       github:'https://github.com/Lourdesjupo/Chronologica',
 
+    },
+
+    {
+      img: './dados.png',
+      projectName: 'Dados y apuestas',
+      tech: '#HTML5, #CSS3, #JavaScript',
+      description:
+      'Mini juego donde podrás poner a prueba tu suerte contra tu máquina. Apuesta una cantidad, elige un número y juega!',
+      github: 'https://github.com/Lourdesjupo/Dados-y-apuestas',
+      link: 'https://lourdesjupo.github.io/Dados-y-apuestas/',
+    },
+    {
+      img: './Anonymous.png',
+      projectName: 'Anonymous Proxy',
+      tech: '#HTML5, #CSS3',
+      description:
+        ' Creación de una página web responsive basada en un diseño proporcionado.',
+      github: 'https://github.com/Lourdesjupo/webResponsive_example',
+      link: 'https://lourdesjupo.github.io/webResponsive_example/',
+    },
+    {
+      img: './Friends.png',
+      projectName: 'Frases favoritas Friends',
+      tech: '#HTML5, #SASS, #ReactJS',
+      description:
+        'Filtra y añade tus frases favoritas de Friends. Los datos se guardan en local.',
+      github: 'https://github.com/Lourdesjupo/add-and-search-friends-quotes',
+      link: 'https://lourdesjupo.github.io/add-and-search-friends-quotes/',
     },
 
   ];
