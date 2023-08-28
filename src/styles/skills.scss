@@ -1,0 +1,34 @@
+.skills {
+margin: 100px 15px 100px 30px;
+
+  &__title {
+   font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: rgb(61, 58, 58);
+    display: inline-block;
+    border-bottom: 5px solid #88b2ff;
+    ;
+  }
+  &__img{
+
+
+    width: 50px;
+    list-style-type: none;
+    margin: 40px;
+    & > img{
+      width: 100px;
+    }
+   @include tablet {
+      width: 100px;
+          margin: 10px;
+   }
+  }
+}
+
+.skill_list {
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+}

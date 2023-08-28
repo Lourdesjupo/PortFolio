@@ -1,0 +1,67 @@
+/* :root{
+font-family: 'Inconsolata', monospace;
+}
+
+/* header */
+.nav{
+  display: flex;
+  flex-direction: row;
+}
+.logo__ljp{
+  width: 100px;
+}
+.icon__container{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  list-style-type: none;
+}
+
+.icon__img{
+  width: 30px;
+  padding: 15px;
+}
+.icon__img:hover{
+  transform: translateY(-5px);
+}
+
+/* hero */
+.hero{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.hero__content{
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} 
+
+.hero__img{
+  width: 150px;
+  margin-left: 15px;
+}
+.hero__title{
+  font-size: 45px;
+  margin-bottom: 0;
+  color: rgb(61, 58, 58);
+}
+.hero__desc{
+  font-size: 18px;
+  
+  color: rgb(121, 109, 109);
+}
+
+.name{
+  color: #F6836B
+}
+
+.button_cv {
+background-color: rgb(51, 197, 148);
+  border: 2px solid  rgb(105, 196, 166);
+}
+
+
+
+
