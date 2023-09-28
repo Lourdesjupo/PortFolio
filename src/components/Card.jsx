@@ -2,7 +2,7 @@ function Cards() {
   const projects = [
     
     {
-      img: './Disney_Character.png',
+      img: './Disney_character.png',
       projectName: 'Disney Character Database',
       tech: '#HTML5, SASS, #JavaScript',
       description:
@@ -11,7 +11,7 @@ function Cards() {
       link: 'https://lourdesjupo.github.io/Disney-Characters-Database/',
     },
     {
-      img: './Rick_and_Morty.png',
+      img: './rick_and_morty.png',
       projectName: 'Buscador Rick And Morty',
       tech: '#HTML5, #SASS, #ReactJS',
       description:
