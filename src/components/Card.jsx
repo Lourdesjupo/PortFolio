@@ -2,7 +2,7 @@ function Cards() {
   const projects = [
     
     {
-      img: './Disney_Character.png',
+      img: './Disney_character.png',
       projectName: 'Disney Character Database',
       tech: '#HTML5, SASS, #JavaScript',
       description:
@@ -11,7 +11,7 @@ function Cards() {
       link: 'https://lourdesjupo.github.io/Disney-Characters-Database/',
     },
     {
-      img: './Rick_and_Morty.png',
+      img: './rick_and_morty.png',
       projectName: 'Buscador Rick And Morty',
       tech: '#HTML5, #SASS, #ReactJS',
       description:
@@ -35,6 +35,7 @@ function Cards() {
       description:
         '⌛En proceso. Herramienta de productividad que permite registrar eventos, configurar alertas y trackear el tiempo de tus tareas.',
       github:'https://github.com/Lourdesjupo/Chronologica',
+      link: 'https://lourdesjupo.github.io/Chronologica/'
 
     },
 
@@ -95,11 +96,18 @@ function Cards() {
               </a>}
             </div>
           </div>
-          <img
-            className='card__img'
-            src={el.img}
-            alt={el.projectName + 'preview'}
-          />
+          {el.link && <a
+                className='card__link'
+                href={el.link }
+                target='_blank'
+                rel='noreferrer'
+              >
+            <img
+              className='card__img'
+              src={el.img}
+              alt={el.projectName + 'preview'}
+            />
+          </a>}
           <div className='card_content_container'>
             <p className='card__tech'>{el.tech}</p>
             <p className='card__description'>{el.description}</p>
