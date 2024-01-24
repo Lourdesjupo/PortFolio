@@ -1,9 +1,16 @@
-
 ---
+import Anonymous from '@public/Anonymous.png';
+import card_generator from '@public/card_generator.png'
+import dados from '@public/dados.png'
+import Disney_Character from '@public/Disney_Character.png'
+import Friends from '@public/Friends.png'
+import Rick_and_Morty from '@public/Rick_and_Morty.png'
+import { Image } from 'astro:assets';
+
 const PROJECTS =  [
 
 {
-  img: './Anonymous.png',
+  img: Anonymous,
   projectName: 'Anonymous Proxy',
   tech: ['HTML5', 'CSS3'],
   description:'Creación de una página web responsive basada en un diseño proporcionado.',
@@ -12,7 +19,7 @@ const PROJECTS =  [
   type:'individual'
 },
 {
-    img: './Rick_and_Morty.png',
+    img: Rick_and_Morty,
     projectName: 'Buscador Rick And Morty',
     tech: ['HTML5', 'SASS', 'ReactJS'],
     description:'Busca tus personajes favoritos de Rick and Morty y averigua su procedencia y otros datos interesantes.',
@@ -21,7 +28,7 @@ const PROJECTS =  [
     type:'individual'
 },
 {
-    img: './card_generator.png',
+    img: card_generator,
     projectName: 'Card Generator',
     tech: ['HTML5', 'SASS', 'JavaScript'],
     description:'Proyecto en grupo: Crea tu tarjeta de presentación de forma personalizada. Añade tu foto y perfil y compártelo en redes.',
@@ -30,7 +37,7 @@ const PROJECTS =  [
     type:'group'
 },
 {
-    img: './Disney_Character.png',
+    img: Disney_Character,
     projectName: 'Disney Character Database',
     tech: ['HTML5', 'SASS', 'JavaScript'],
     description:'Web Responsive donde almacenar todos tus personajes favoritos de Disney. ',
@@ -39,7 +46,7 @@ const PROJECTS =  [
     type:'individual'
   },
 {
-    img: './dados.png',
+    img: dados,
     projectName: 'Dados y apuestas',
     tech: ['HTML5', 'CSS3', 'JavaScript'],
     description:'Mini juego donde podrás poner a prueba tu suerte contra tu máquina. Apuesta una cantidad, elige un número y juega!',
@@ -48,7 +55,7 @@ const PROJECTS =  [
     type:'individual'
 },
   {
-    img: './Friends.png',
+    img: Friends,
     projectName: 'Frases favoritas Friends',
     tech: ['HTML5', 'SASS', 'ReactJS'],
     description:'Filtra y añade tus frases favoritas de Friends. Los datos se guardan en local.',
@@ -76,7 +83,7 @@ const techColors = {
 {
     PROJECTS.map(({img, projectName, tech, description, github, link})=> (
         <article class=" flex flex-col sm:flex-row bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
-            <img class="hidden sm:w-2/6 sm:block" src={img} alt=`Captura de pantalla del proyecto ${description}`/>
+            <Image class="hidden sm:w-2/6 sm:block" src={img} alt=`Captura de pantalla del proyecto ${description}`/>
             <div class="flex flex-col justify-between flex-wrap p-4 leading-normal">
                 <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{projectName}</h3>
                 <p>{description}</p>

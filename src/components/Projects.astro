@@ -1,17 +1,22 @@
-
 ---
+import Buscaminas from '@public/Buscaminas.png';
+import ChronoLogica from '@public/ChronoLogica.png';
+import TodoList from '@public/TodoList.png'
+import Rick_and_Morty_2 from '@public/Rick_and_Morty_2.png'
+import { Image } from 'astro:assets';
+
+
 const PROJECTS =  [
 {
-    img: './Buscaminas.png',
+    img: Buscaminas,
     projectName: 'Buscaminas',
     tech: ['HTML5', 'SASS', 'ReactJS',],
     description:'Buscaminas con tres niveles de dificultad diferentes. Saltará un logro si encuentras la mina en la primera jugada.',
     github: 'https://github.com/Lourdesjupo/Buscaminas',
     link: 'https://lourdesjupo.github.io/Buscaminas/',
-  },
-  
+  },  
   {
-    img: './ChronoLogica.png',
+    img: ChronoLogica,
     projectName: 'ChronoLogica',
     tech: ['ReactJS', 'MUI', 'Vite', 'MySQL', 'NodeJS', 'ExpressJS'],
     description:'⌛ En proceso. Herramienta de productividad que permite registrar eventos, configurar alertas y trackear el tiempo de tus tareas.',
@@ -20,7 +25,7 @@ const PROJECTS =  [
 
   },
 {
-    img: './TodoList.png',
+    img: TodoList,
     projectName: 'TodoList',
     tech: ['HTML5', 'SASS', 'ReactJS', 'MySQL', 'NodeJS','ExpressJS','Vite'],
     description:'Web responsive con registro y login. Anota tus tareas diarias, añade edita, elimina o marca tus tareas como completadas. ',
@@ -28,7 +33,7 @@ const PROJECTS =  [
     link: 'https://lourdesjupo.github.io/todo-list/',
 },
 {
-  img: './Rick_and_Morty_2.png',
+  img: Rick_and_Morty_2,
   projectName: 'Rick and Morty infinite scroll',
   tech: ['HTML5', 'SASS', 'ReactJS'],
   description:'Buscador con scroll infinito y responsive. Este proyecto es una prueba de acceso al Hackaton organizado por Jump2Digital23. ',
@@ -54,7 +59,7 @@ const techColors = {
 {
     PROJECTS.map(({img, projectName, tech, description, github, link})=> (
         <article class=" flex flex-col sm:flex-row bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
-            <img class="hidden sm:w-2/6 sm:block " src={img} alt=`Captura de pantalla del proyecto ${description}`/>
+            <Image class="hidden sm:w-2/6 sm:block " src={img} alt=`Captura de pantalla del proyecto ${description}`/>
             <div class="flex flex-col justify-between flex-wrap p-4 leading-normal">
                 <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{projectName}</h3>
                 <p>{description}</p>

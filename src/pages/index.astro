@@ -29,8 +29,13 @@ import Projects from "../components/Projects.astro";
 import ProjectsAda from "../components/ProjectsAda.astro";
 import ContactForm from "../components/ContactForm.astro";
 import Knowledge from "../components/Knowledge.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
 import IconAnimation from "../components/IconAnimation.astro";
 import Footer from "../components/Footer.astro";
+import programmingImg from "@public/programming.png"
+import { Image } from "astro:assets";
+
+
 ---
 
 <Layout
@@ -41,10 +46,9 @@ import Footer from "../components/Footer.astro";
     <section
       class="mb-14 sm:flex sm:flex-row sm:justify-content sm:align-full sm:mx-auto lg:w-[850px] sm:mt-28 sm:mb-6 sm:pb-20"
     >
-    <!-- flex flex-column justify-content align-full mx-auto lg:w-[850px] mt-28 mb-6 pb-20 -->
-      <img
+      <Image
         class="w-30 h-30 sm:h-40 sm:w-40 lg:h-80 lg:w-80 opacity-80 basis-1/4 mr-7"
-        src="./programming.png"
+        src= {programmingImg}
         alt="women in tech"
       />
       <div class="flex flex-col self-center">
@@ -160,7 +164,7 @@ import Footer from "../components/Footer.astro";
               <GitIcon />
            </IconAnimation>
             <IconAnimation desc="GitHub">
-              <Github class="size-7"/>
+              <GitHubIcon />
            </IconAnimation>
           </div>
         </Knowledge>
@@ -178,7 +182,8 @@ import Footer from "../components/Footer.astro";
                 <ReactIcon />
               </IconAnimation>
               <IconAnimation desc="Jest">
-                <JestIcon class="size-6"/>              </IconAnimation>
+                <JestIcon class="size-6"/>
+              </IconAnimation>
           </div>
         </Knowledge>
       </div>
