@@ -1,20 +1,15 @@
 ---
+import Pong from '@public/pong.png';
 import Buscaminas from '@public/Buscaminas.png';
 import ChronoLogica from '@public/ChronoLogica.png';
 import TodoList from '@public/TodoList.png'
 import Rick_and_Morty_2 from '@public/Rick_and_Morty_2.png'
+import proximamentePong from '@public/pong.mp4'
 import { Image } from 'astro:assets';
 
 
 const PROJECTS =  [
-{
-    img: Buscaminas,
-    projectName: 'Buscaminas',
-    tech: ['HTML5', 'SASS', 'ReactJS',],
-    description:'Buscaminas con tres niveles de dificultad diferentes. Saltará un logro si encuentras la mina en la primera jugada.',
-    github: 'https://github.com/Lourdesjupo/Buscaminas',
-    link: 'https://lourdesjupo.github.io/Buscaminas/',
-  },  
+
   {
     img: ChronoLogica,
     projectName: 'ChronoLogica',
@@ -39,7 +34,24 @@ const PROJECTS =  [
   description:'Buscador con scroll infinito y responsive. Este proyecto es una prueba de acceso al Hackaton organizado por Jump2Digital23. ',
   github: 'https://github.com/Lourdesjupo/Jump2Digital',
   link: 'https://lourdesjupo.github.io/Jump2Digital/',
-}
+}, 
+  {
+    img: Pong,
+    projectName: 'Pong',
+    tech: ['HTML5', 'CSS3', 'JavaScript',],
+    description:'⌛ En proceso. Recreación del mitico juego Pong',
+    github: 'https://github.com/Lourdesjupo/Pong',
+    link: '/pong.mp4'
+
+  },
+  {
+    img: Buscaminas,
+    projectName: 'Buscaminas',
+    tech: ['HTML5', 'SASS', 'ReactJS',],
+    description:'Buscaminas con tres niveles de dificultad diferentes. Saltará un logro si encuentras la mina en la primera jugada.',
+    github: 'https://github.com/Lourdesjupo/Buscaminas',
+    link: 'https://lourdesjupo.github.io/Buscaminas/',
+  },  
 ]
 const techColors = {
     HTML5 : 'dark:bg-red-900 dark:text-red-300 bg-red-100 text-red-800',

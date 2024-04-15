@@ -1,123 +1,126 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Badge from "../components/Badge.astro";
-import LinkedIn from "../icons/LinkedIn.astro";
-import Github from "../icons/Github.astro";
-import Mail from "../icons/Mail.astro";
-import AboutMe from "../icons/AboutMe.astro";
-import SocialMedia from "../components/SocialMedia.astro";
-import DownloadCv from "../icons/DownloadCv.astro";
-import TypescriptIcon from "../icons/TypescriptIcon.astro";
-import ReactIcon from "../icons/ReactIcon.astro";
-import HtmlIcon from "../icons/HtmlIcon.astro";
-import CssIcon from "../icons/CssIcon.astro";
-import SassIcon from "../icons/SassIcon.astro";
-import JavaScriptIcon from "../icons/JavaScriptIcon.astro";
-import ViteIcon from "../icons/ViteIcon.astro";
-import MySQLIcon from "../icons/MySQLIcon.astro";
-import GitIcon from "../icons/GitIcon.astro";
-import Tailwind from "../icons/Tailwind.astro";
-import NodejsIcon from "../icons/NodejsIcon.astro";
-import MaterialIcon from "../icons/MaterialIcon.astro";
-import Express from "../icons/Express.astro";
-import AstroIcon from "../icons/AstroIcon.astro"
-import JestIcon from "../icons/JestIcon.astro"
-import CodeIcon from "../icons/CodeIcon.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Projects from "../components/Projects.astro";
-import ProjectsAda from "../components/ProjectsAda.astro";
-import ContactForm from "../components/ContactForm.astro";
-import Knowledge from "../components/Knowledge.astro";
-import GitHubIcon from "../icons/GitHubIcon.astro";
-import IconAnimation from "../components/IconAnimation.astro";
-import Footer from "../components/Footer.astro";
-import programmingImg from "@public/programming.png"
-import { Image } from "astro:assets";
-
-
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
+import Github from '../icons/Github.astro';
+import Mail from '../icons/Mail.astro';
+import AboutMe from '../icons/AboutMe.astro';
+import SocialMedia from '../components/SocialMedia.astro';
+import DownloadCv from '../icons/DownloadCv.astro';
+import TypescriptIcon from '../icons/TypescriptIcon.astro';
+import ReactIcon from '../icons/ReactIcon.astro';
+import HtmlIcon from '../icons/HtmlIcon.astro';
+import CssIcon from '../icons/CssIcon.astro';
+import SassIcon from '../icons/SassIcon.astro';
+import JavaScriptIcon from '../icons/JavaScriptIcon.astro';
+import ViteIcon from '../icons/ViteIcon.astro';
+import MySQLIcon from '../icons/MySQLIcon.astro';
+import GitIcon from '../icons/GitIcon.astro';
+import Tailwind from '../icons/Tailwind.astro';
+import NodejsIcon from '../icons/NodejsIcon.astro';
+import MaterialIcon from '../icons/MaterialIcon.astro';
+import Express from '../icons/Express.astro';
+import AstroIcon from '../icons/AstroIcon.astro';
+import JestIcon from '../icons/JestIcon.astro';
+import CodeIcon from '../icons/CodeIcon.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Projects from '../components/Projects.astro';
+import ProjectsAda from '../components/ProjectsAda.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Knowledge from '../components/Knowledge.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import IconAnimation from '../components/IconAnimation.astro';
+import Footer from '../components/Footer.astro';
+import programmingImg from '@public/programming.png';
+import { Image } from 'astro:assets';
 ---
 
 <Layout
-  title="Portfolio de Lourdes Juárez - Desarrollador y programador web"
-  description="Contrata a Lourdes Juárez desarrolladora y programador web"
+  title='Portfolio de Lourdes Juárez - Desarrollador y programador web'
+  description='Contrata a Lourdes Juárez desarrolladora y programador web'
 >
-  <main class="px-9">
+  <main class='px-9'>
     <section
-      class="mb-14 sm:flex sm:flex-row sm:justify-content sm:align-full sm:mx-auto lg:w-[850px] sm:mt-28 sm:mb-6 sm:pb-20"
+      class='mb-14 sm:flex sm:flex-row sm:justify-content sm:align-full sm:mx-auto lg:w-[850px] sm:mt-28 sm:mb-6 sm:pb-20'
     >
       <Image
-        class="w-30 h-30 sm:h-40 sm:w-40 lg:h-80 lg:w-80 opacity-80 basis-1/4 mr-7"
-        src= {programmingImg}
-        alt="women in tech"
+        class='w-30 h-30 sm:h-40 sm:w-40 lg:h-80 lg:w-80 opacity-80 basis-1/4 mr-7'
+        src={programmingImg}
+        alt='women in tech'
       />
-      <div class="flex flex-col self-center">
+      <div class='flex flex-col self-center'>
         <h1
-          class="text-gray-900 md:text-3xl lg:text-4xl tracking-wide text-3xl font-bold  pb-3 pr-3"
+          class='text-gray-900 md:text-3xl lg:text-4xl tracking-wide text-3xl font-bold pb-3 pr-3'
         >
-          <div class=" flex flex-col sm:flex-col sm:justify-center ">
-            Desarrolladora web
+          <div class='flex flex-col sm:flex-col sm:justify-center'>
+            Front end developer
             <a
-              href="https://www.linkedin.com/in/lourdes-juárez-porto-984392129/"
-              target="_blank"
-              rel="noopener"
+              href='https://www.linkedin.com/in/lourdes-juárez-porto-984392129/'
+              target='_blank'
+              rel='noopener'
             >
               <Badge>Open to work</Badge>
             </a>
           </div>
         </h1>
-        <h2 class="text-xl opacity-70 text-wrap mb-3">
-          ¡Hola! soy Lourdes Juárez, <span class="text-cerise-600"
-            >desarrolladora web especializada en frontend.</span
-          > De Barcelona, España. <span class="text-submarine-500 font-medium"
+        <h2 class='text-xl opacity-70 text-wrap mb-3'>
+          ¡Hola! soy Lourdes Juárez, <span class='text-cerise-600'
+            >desarrolladora web.</span
+          > De Barcelona, España. <span class='text-submarine-500 font-medium'
             >Echa un vistazo a mi currículum.</span
           >
         </h2>
-        <nav class="flex gap-x-5 sm:gap-x-7">
+        <nav class='flex gap-x-5 sm:gap-x-7'>
           <SocialMedia
-            href="https://www.linkedin.com/in/lourdes-juárez-porto-984392129/"
+            href='https://www.linkedin.com/in/lourdes-juárez-porto-984392129/'
           >
-            <LinkedIn class="w-8 h-6 mb-1" />
-             LinkedIn
+            <LinkedIn class='w-8 h-6 mb-1' />
+            LinkedIn
           </SocialMedia>
-          <SocialMedia href="https://github.com/Lourdesjupo">
-            <Github class="w-7 h-6" />
-             Github
+          <SocialMedia href='https://github.com/Lourdesjupo'>
+            <Github class='w-7 h-6' />
+            Github
           </SocialMedia>
-          <SocialMedia href="./LourdesJuarez_FrontEnd.pdf">
-            <DownloadCv class="size-8" />
-             CV
+          <SocialMedia href='./Lourdes_Juarez_FrontEnd_developer.pdf'>
+            <DownloadCv class='size-8' />
+            CV
           </SocialMedia>
         </nav>
       </div>
     </section>
 
-    <SectionContainer id="projects">
+    <SectionContainer id='projects'>
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both"
+        class='text-3xl font-semibold mb-6 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
       >
-        <CodeIcon class="size-7" />
-         Proyectos personales
+        <CodeIcon class='size-7' />
+        Proyectos personales
       </h2>
-      <p class="tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6">
-        Aquí puedes ver mis trabajos más recientes, incluyendo aquellos en los que continuo trabajando.
+      <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6'>
+        Aquí puedes ver mis trabajos más recientes, incluyendo aquellos en los
+        que continuo trabajando.
       </p>
       <Projects />
-      <h2 class="text-3xl font-semibold  flex gap-x-3 items-center mt-14 sm:mt-24 animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both">
-        <CodeIcon class="size-7" />
-         Proyectos académicos
+      <h2
+        class='text-3xl font-semibold flex gap-x-3 items-center mt-14 sm:mt-24 animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
+      >
+        <CodeIcon class='size-7' />
+        Proyectos académicos
       </h2>
-      <p class="tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6">
+      <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6'>
         Como alumna de Adalab hice los siguientes proyectos para las
         evaluaciones continuas.
       </p>
       <ProjectsAda />
     </SectionContainer>
-    <SectionContainer id="aboutme">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both">
+    <SectionContainer id='aboutme'>
+      <h2
+        class='text-3xl font-semibold mb-6 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
+      >
         <AboutMe /> Sobre mí
       </h2>
-      <p class="tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-4">
+      <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-4'>
         En mi trayectoria profesional, he ocupado posiciones como coordinadora
         de proyectos, gestión de páginas e-commerce en PrestaShop,
         digitalización e indexación de datos. Recientemente, decidí dar un giro
@@ -125,76 +128,81 @@ import { Image } from "astro:assets";
         Adalab que me ha proporcionado las habilidades técnicas necesarias para
         diseñar y crear webs responsivas.
       </p>
-      <div class="grid grid-cols-2 gap-2 mt-6">
-        <Knowledge class="col-start-1 col-end-3">
+      <div class='grid grid-cols-2 gap-2 mt-6'>
+        <Knowledge class='col-start-1 col-end-3'>
           <h5
-            class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            class='mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'
           >
             Programación
           </h5>
           <div
-            class="font-normal text-gray-700 dark:text-gray-400 grid grid-cols-5 sm:grid-cols-10 gap-3"
+            class='font-normal text-gray-700 dark:text-gray-400 grid grid-cols-5 sm:grid-cols-10 gap-3'
           >
-            <IconAnimation desc="HTML5"><HtmlIcon class="w-28"/></IconAnimation>
-            <IconAnimation desc="CSS3"><CssIcon /></IconAnimation>
-            <IconAnimation desc="Sass"><SassIcon /></IconAnimation>
-            <IconAnimation desc="JavaScript"><JavaScriptIcon /></IconAnimation>
-            <IconAnimation desc="Tailwind"><Tailwind /></IconAnimation>
-            <IconAnimation desc="React18"><ReactIcon /></IconAnimation>
-            <IconAnimation desc="NodeJS"><NodejsIcon /></IconAnimation>
-            <IconAnimation desc="MySQL"><MySQLIcon /></IconAnimation>
-            <IconAnimation desc="MUI"><MaterialIcon /> </IconAnimation>
-            <IconAnimation desc="Express"><Express /></IconAnimation> 
+            <IconAnimation desc='HTML5'><HtmlIcon class='w-28' /></IconAnimation
+            >
+            <IconAnimation desc='CSS3'><CssIcon /></IconAnimation>
+            <IconAnimation desc='Sass'><SassIcon /></IconAnimation>
+            <IconAnimation desc='JavaScript'><JavaScriptIcon /></IconAnimation>
+            <IconAnimation desc='Tailwind'><Tailwind /></IconAnimation>
+            <IconAnimation desc='React18'><ReactIcon /></IconAnimation>
+            <IconAnimation desc='NodeJS'><NodejsIcon /></IconAnimation>
+            <IconAnimation desc='MySQL'><MySQLIcon /></IconAnimation>
+            <IconAnimation desc='MUI'><MaterialIcon /> </IconAnimation>
+            <IconAnimation desc='Express'><Express /></IconAnimation>
           </div>
         </Knowledge>
         <Knowledge>
           <h5
-            class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            class='mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'
           >
             Tooling
           </h5>
-          <div class="font-normal text-gray-700 dark:text-gray-400 grid grid-cols-2 sm:grid-cols-5 sm:max-w-78 gap-4">            
-            <IconAnimation desc="Vite">
+          <div
+            class='font-normal text-gray-700 dark:text-gray-400 grid grid-cols-2 sm:grid-cols-5 sm:max-w-78 gap-4'
+          >
+            <IconAnimation desc='Vite'>
               <ViteIcon />
-           </IconAnimation>
-           <IconAnimation desc="Astro">
-             <AstroIcon/>
-          </IconAnimation>
-            <IconAnimation desc="Git">
+            </IconAnimation>
+            <IconAnimation desc='Astro'>
+              <AstroIcon />
+            </IconAnimation>
+            <IconAnimation desc='Git'>
               <GitIcon />
-           </IconAnimation>
-            <IconAnimation desc="GitHub">
+            </IconAnimation>
+            <IconAnimation desc='GitHub'>
               <GitHubIcon />
-           </IconAnimation>
+            </IconAnimation>
           </div>
         </Knowledge>
         <Knowledge>
           <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            class='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'
           >
             Estudiando
           </h5>
-          <div class="font-normal text-gray-700 dark:text-gray-400 grid grid-cols-2 sm:grid-cols-5  sm:max-w-78 gap-4 ">
-              <IconAnimation desc="Typescript">
-                 <TypescriptIcon/>
-              </IconAnimation>
-              <IconAnimation desc="React">
-                <ReactIcon />
-              </IconAnimation>
-              <IconAnimation desc="Jest">
-                <JestIcon class="size-6"/>
-              </IconAnimation>
+          <div
+            class='font-normal text-gray-700 dark:text-gray-400 grid grid-cols-2 sm:grid-cols-5 sm:max-w-78 gap-4'
+          >
+            <IconAnimation desc='Typescript'>
+              <TypescriptIcon />
+            </IconAnimation>
+            <IconAnimation desc='React'>
+              <ReactIcon />
+            </IconAnimation>
+            <IconAnimation desc='Jest'>
+              <JestIcon class='size-6' />
+            </IconAnimation>
           </div>
         </Knowledge>
       </div>
     </SectionContainer>
-    <SectionContainer id="contactform">
+    <SectionContainer id='contactform'>
       <h2
-        class="text-3xl font-semibold mb-6 mt-10 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both"
+        class='text-3xl font-semibold mb-6 mt-10 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
       >
-        <Mail class="size-7" />Contacto
+        <Mail class='size-7' />Contacto
       </h2>
-      <p class="tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-3">
+      <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-3'>
         Hazme llegar tu comentario, opinión... Indica tu nombre y tu dirección
         de correo a continuación y te respondere tan pronto como sea posible.
         Gracias!
@@ -203,3 +211,4 @@ import { Image } from "astro:assets";
     </SectionContainer>
   </main>
   <Footer />
+</Layout>
