@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site:'https://lourdesjupo.github.io/',
-  outDir: 'docs',
+  outDir: 'dist',
   build: {
     assets: 'assets',
   }
