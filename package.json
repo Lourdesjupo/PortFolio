@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm build && git add -A && git commit -m \"build\" && git push"
+    "deploy": "npm run build && git add -A && git commit -m \"build\" && git push"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.4",
