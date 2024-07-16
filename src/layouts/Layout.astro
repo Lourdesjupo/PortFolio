@@ -1,6 +1,6 @@
 ---
 import Header from '../components/Header.astro';
-import "@fontsource/onest/400.css"; // Defaults to weight 400.
+import '@fontsource/onest/400.css'; // Defaults to weight 400.
 interface Props {
 	title: string;
 	description: string;
@@ -10,37 +10,41 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang='es'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image" href="logo_ljp.png" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='UTF-8' />
+		<meta name='description' content='Bienvenido/a al portafolio de Lourdes Juárez, desarrolladora web. ' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image' href='logo_ljp.png' />
+		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
-		  <!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HL4DNFGSWS"></script>
+		<!-- Google tag (gtag.js) -->
+		<script async src='https://www.googletagmanager.com/gtag/js?id=G-HL4DNFGSWS'></script>
 		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-HL4DNFGSWS');
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-HL4DNFGSWS');
 		</script>
 	</head>
 	<body>
-		<div class="relative h-full w-full bg-white"> 
-		<div class="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div></div>
+		<div class='relative h-full w-full bg-white'>
+			<div
+				class='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]'
+			>
+			</div>
+		</div>
 		<Header />
 		<slot />
 	</body>
 </html>
 <style is:global>
 	:root {
-	color-scheme: light; /* @TODO: Añadir dark  */
-		
+		color-scheme: light; /* @TODO: Añadir dark  */
 	}
 	html {
-		
 		font-family: 'onest', system-ui, sans-serif;
 		scroll-behavior: smooth;
 	}
