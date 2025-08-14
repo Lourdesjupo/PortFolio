@@ -34,6 +34,7 @@ import IconAnimation from '../components/IconAnimation.astro';
 import Footer from '../components/Footer.astro';
 import programmingImg from '@public/programming.png';
 import { Image } from 'astro:assets';
+import ProjectsProf from 'src/components/ProjectsProf.astro';
 ---
 
 <Layout
@@ -52,9 +53,9 @@ import { Image } from 'astro:assets';
 			<div class='flex flex-col self-center'>
 				<h1 class='text-gray-900 md:text-3xl lg:text-4xl tracking-wide text-3xl font-bold pb-3 pr-3'>
 					<div class='flex flex-col sm:flex-col sm:justify-center'>
-						<p>Front end developer</p>
+						<p>Desarrolladora web</p>
 						<a href='https://www.linkedin.com/in/lourdes-juárez-porto-984392129/' target='_blank' rel='noopener'>
-							<Badge>Open to work</Badge>
+							<!-- <Badge>Open to work</Badge> -->
 						</a>
 					</div>
 				</h1>
@@ -85,6 +86,16 @@ import { Image } from 'astro:assets';
         class='text-3xl font-semibold mb-6 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
       >
         <CodeIcon class='size-7' />
+        Proyectos profesionales
+      </h2>
+      <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6'>
+        Aquí puedes ver mis trabajos profesionales más recientes.
+      </p>
+      <ProjectsProf />
+            <h2
+        class='text-3xl font-semibold mb-6 flex gap-x-3 items-center animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
+      >
+        <CodeIcon class='size-7' />
         Proyectos personales
       </h2>
       <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6'>
@@ -92,17 +103,17 @@ import { Image } from 'astro:assets';
         que continuo trabajando. Los proyectos están alojados en un servidor que tarda aproximadamente entre 1-2 minutos en arrancar. 
       </p>
       <Projects />
-      <h2
-        class='text-3xl font-semibold flex gap-x-3 items-center mt-14 sm:mt-24 animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
-      >
-        <CodeIcon class='size-7' />
-        Proyectos académicos
-      </h2>
-      <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6'>
-        Como alumna de Adalab hice los siguientes proyectos para las
-        evaluaciones continuas.
-      </p>
-      <ProjectsAda />
+        <!-- <h2
+          class='text-3xl font-semibold flex gap-x-3 items-center mt-14 sm:mt-24 animate-fade-right animate-once animate-duration-2000 animate-delay-0 animate-ease-linear animate-normal animate-fill-both'
+        >
+          <CodeIcon class='size-7' />
+          Proyectos académicos
+        </h2>
+        <p class='tracking-wide text-gray-500 md:text-lg dark:text-gray-400 mb-6'>
+          Como alumna de Adalab hice los siguientes proyectos para las
+          evaluaciones continuas.
+        </p>
+        <ProjectsAda /> -->
     </SectionContainer>
     <SectionContainer id='aboutme'>
       <h2
