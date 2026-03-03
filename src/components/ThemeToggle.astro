@@ -3,18 +3,28 @@ import SunIcon from '../icons/SunIcon.astro';
 import MoonIcon from '../icons/MoonIcon.astro';
 ---
 
-<button
-	id="theme-toggle"
-	type="button"
-	class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-	aria-label="Cambiar tema"
->
-	<SunIcon class="hidden dark:block text-yellow-500" />
-	<MoonIcon class="block dark:hidden text-gray-700" />
-</button>
+<div id="theme-toggle" class="flex items-center gap-1 bg-gray-100/50 dark:bg-gray-800/50 rounded-full p-1">
+	<button
+		id="sun-btn"
+		type="button"
+		class="p-1.5 rounded-full transition-all duration-300 bg-yellow-100 dark:bg-transparent text-yellow-500 dark:text-gray-500"
+		aria-label="Modo claro"
+	>
+		<SunIcon class="w-5 h-5" />
+	</button>
+	<button
+		id="moon-btn"
+		type="button"
+		class="p-1.5 rounded-full transition-all duration-300 bg-transparent dark:bg-indigo-900 text-gray-400 dark:text-indigo-300"
+		aria-label="Modo oscuro"
+	>
+		<MoonIcon class="w-5 h-5" />
+	</button>
+</div>
 
 <script is:inline>
-	const themeToggle = document.getElementById('theme-toggle');
+	const sunBtn = document.getElementById('sun-btn');
+	const moonBtn = document.getElementById('moon-btn');
 
 	function getTheme() {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -38,8 +48,6 @@ import MoonIcon from '../icons/MoonIcon.astro';
 	// Set initial theme
 	setTheme(getTheme() || 'light');
 
-	themeToggle?.addEventListener('click', () => {
-		const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-		setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-	});
+	sunBtn?.addEventListener('click', () => setTheme('light'));
+	moonBtn?.addEventListener('click', () => setTheme('dark'));
 </script>

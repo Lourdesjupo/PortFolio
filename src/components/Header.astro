@@ -2,21 +2,110 @@
 import { Image } from 'astro:assets';
 import logo_ljp from '../assets/logo_ljp.png';
 import ThemeToggle from './ThemeToggle.astro';
+import MenuIcon from '../icons/MenuIcon.astro';
+import CloseIcon from '../icons/CloseIcon.astro';
 ---
 
 <header
-	class='flex justify-between items-center mx-auto px-3 sm:px-10 py-3 sticky top-0 w-full xl:w-[1120px]
-z-10 bg-white dark:bg-gray-900 drop-shadow-md rounded-lg'
+  class='flex justify-between items-center mx-auto px-4 sm:px-8 py-3 sticky top-4 w-full min-w-[380px] xl:w-[1120px]
+z-10 rounded-2xl
+bg-white/30 dark:bg-gray-900/30
+backdrop-blur-xl
+border border-white/40 dark:border-white/10
+shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]
+dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]
+before:absolute before:inset-0 before:rounded-2xl
+before:bg-gradient-to-br before:from-white/20 before:to-transparent
+dark:before:from-white/5
+before:pointer-events-none before:z-[-1]
+relative overflow-visible'
 >
-	<Image class='rounded-full w-16 h12' src={logo_ljp} alt='ljp photo' />
-	<nav class='flex flex-row items-center gap-x-6 sm:gap-x-10 opacity-80 sm:text-sm'>
-		<a class='text-gray-700 hover:text-submarine-400 dark:text-gray-300 dark:hover:text-submarine-300 hover:font-semibold' href='#aboutme'>Sobre mí</a>
-		<a class='text-gray-700 hover:text-submarine-400 dark:text-gray-300 dark:hover:text-submarine-300 hover:font-semibold' href='#projects'>Proyectos</a>
-		<a class='text-gray-700 hover:text-submarine-400 dark:text-gray-300 dark:hover:text-submarine-300 hover:font-semibold' href='#contactform'>Contacto</a>
-		<ThemeToggle />
-	</nav>
+  <Image
+    class='rounded-full w-10 h-10 sm:w-10 sm:h-10 ring-2 ring-white/50 dark:ring-white/20'
+    src={logo_ljp}
+    alt='ljp photo'
+  />
+
+  <!-- Desktop nav -->
+  <nav class='hidden sm:flex flex-row items-center gap-x-4 sm:gap-x-8 text-sm'>
+    <a
+      class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-submarine-400 dark:after:bg-submarine-300 after:transition-all after:duration-300 hover:after:w-full'
+      href='#aboutme'>Sobre mí</a
+    >
+    <a
+      class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-submarine-400 dark:after:bg-submarine-300 after:transition-all after:duration-300 hover:after:w-full'
+      href='#projects'>Proyectos</a
+    >
+    <a
+      class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-submarine-400 dark:after:bg-submarine-300 after:transition-all after:duration-300 hover:after:w-full'
+      href='#contactform'>Contacto</a
+    >
+    <ThemeToggle />
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class='flex sm:hidden items-center gap-3'>
+    <ThemeToggle />
+    <button
+      id='menu-toggle'
+      type='button'
+      class='flex items-center justify-center p-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-white/20 dark:hover:bg-gray-700/50 transition-colors'
+      aria-label='Abrir menú'
+    >
+      <MenuIcon class='menu-icon w-6 h-6' />
+      <CloseIcon class='close-icon hidden w-6 h-6' />
+    </button>
+  </div>
+
+  <!-- Mobile menu dropdown -->
+  <div
+    id='mobile-menu'
+    class='hidden sm:hidden absolute top-full left-0 right-0 mt-2 mx-4 p-4 rounded-2xl
+    bg-white dark:bg-gray-900
+    border border-gray-200 dark:border-gray-700
+    shadow-lg'
+  >
+    <nav class='flex flex-col gap-4 text-sm'>
+      <a
+        class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 py-2'
+        href='#aboutme'>Sobre mí</a
+      >
+      <a
+        class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 py-2'
+        href='#projects'>Proyectos</a
+      >
+      <a
+        class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 py-2'
+        href='#contactform'>Contacto</a
+      >
+    </nav>
+  </div>
 </header>
 
-<!-- 
-<header class="flex justify-between items-center mx-auto px-10 py-3 sticky top-0 w-full xl:w-[1120px]
-z-10 bg-white drop-shadow-md rounded-lg "> -->
+<script is:inline>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuToggle?.querySelector('.menu-icon');
+  const closeIcon = menuToggle?.querySelector('.close-icon');
+
+  menuToggle?.addEventListener('click', () => {
+    const isHidden = mobileMenu?.classList.contains('hidden');
+    mobileMenu?.classList.toggle('hidden');
+    if (isHidden) {
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    } else {
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+
+  // Close menu when clicking on a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+</script>
