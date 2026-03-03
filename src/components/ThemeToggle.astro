@@ -1,0 +1,45 @@
+---
+import SunIcon from '../icons/SunIcon.astro';
+import MoonIcon from '../icons/MoonIcon.astro';
+---
+
+<button
+	id="theme-toggle"
+	type="button"
+	class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+	aria-label="Cambiar tema"
+>
+	<SunIcon class="hidden dark:block text-yellow-500" />
+	<MoonIcon class="block dark:hidden text-gray-700" />
+</button>
+
+<script is:inline>
+	const themeToggle = document.getElementById('theme-toggle');
+
+	function getTheme() {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return 'dark';
+		}
+		return 'light';
+	}
+
+	function setTheme(theme) {
+		if (theme === 'dark') {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+		localStorage.setItem('theme', theme);
+	}
+
+	// Set initial theme
+	setTheme(getTheme() || 'light');
+
+	themeToggle?.addEventListener('click', () => {
+		const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+		setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+	});
+</script>

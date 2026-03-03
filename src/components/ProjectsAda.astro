@@ -86,7 +86,7 @@ const techColors = {
             <Image class="hidden sm:w-2/6 sm:block" src={img} alt={`Captura de pantalla del proyecto ${description}`}/>
             <div class="flex flex-col justify-between flex-wrap p-4 leading-normal">
                 <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{projectName}</h3>
-                <p>{description}</p>
+                <p class="text-gray-700 dark:text-gray-300">{description}</p>
                 <ul class=" flex flex-row">
                     {tech.map (tech =>(
                         <li class={`${techColors[tech]} text-xs font-medium me-2 px-2.5 py-0.5 rounded-full  `}>{tech}</li>
