@@ -1,0 +1,49 @@
+---
+const skills = [
+    "UX/UI",
+    "Figma",
+    "Frontend",
+    "HTML",
+    "CSS",
+    "Javascript",
+    "React",
+    "Astro",
+    "Tailwind",
+    "sass",
+    "Nodejs",
+    "Expressjs",
+    "PostgreSQL",
+    "MySQL",
+    "Docker",
+    "CI/CD",
+];
+---
+
+<section id="skills" class="py-24 px-10 md:px-16 glass relative overflow-hidden">
+    <div
+        class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2"
+    >
+    </div>
+
+    <div class="flex flex-col items-center text-center mb-12 reveal reveal-up">
+        <h3 class="text-4xl font-black mb-6 text-light-text dark:text-white">
+            Stack <span class="text-[#5EC8CA]">Tecnológico.</span>
+        </h3>
+        <p class="max-w-xl text-light-text/60 dark:text-white/60 font-medium">
+            Herramientas y tecnologías que utilizo para dar vida a cada
+            proyecto.
+        </p>
+    </div>
+
+    <ul class="flex flex-wrap justify-center gap-3">
+        {
+            skills.map((skill, index) => (
+                <li
+                    class={`px-6 py-3 rounded-2xl glass text-sm font-bold text-light-text dark:text-white hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-default list-none reveal reveal-scale stagger-${(index % 5) + 1}`}
+                >
+                    {skill}
+                </li>
+            ))
+        }
+    </ul>
+</section>

@@ -1,0 +1,188 @@
+---
+import { Image } from "astro:assets";
+import programming_1 from "../assets/programming_1.png";
+---
+
+<section
+  class="min-h-screen flex items-center justify-center pt-40 pb-24 overflow-hidden relative"
+>
+
+  <div
+    class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[150px] animate-pulse"
+    style="animation-delay: 2s"
+  >
+  </div>
+
+  <div
+    class="max-w-4xl mx-auto px-6 text-center z-10 flex flex-col items-center"
+  >
+    <div class="relative mb-12 group reveal reveal-scale">
+
+      <div
+        class="absolute -top-1 -right-24 md:top-0 md:-right-24 z-20 pointer-events-none animate-float scale-90 md:scale-100"
+      >
+        <div
+          class="glass bg-white/60 px-5 py-2 rounded-[2rem] text-[10px] font-bold tracking-widest uppercase text-black dark:text-[#60C9CA] min-w-[240px] h-10 relative flex items-center justify-center shadow-2xl"
+        >
+          <div class="relative w-full h-full overflow-hidden">
+            {
+              [
+                "...Mapping...",
+                "...Synthesizing...",
+                "...Refining...",
+                "...Delivering...",
+                "...Processing...",
+                "...Calculating...",
+                "...Consulting the digital oracle...",
+                "...42...",
+              ].map((word, index, arr) => (
+                <span
+                  class="absolute inset-0 flex items-center justify-center animate-word-rotate opacity-0 whitespace-nowrap px-4"
+                  style={`animation-delay: ${index * 3}s; animation-duration: ${arr.length * 3}s;`}
+                >
+                  {word}
+                </span>
+              ))
+            }
+          </div>
+
+          <div
+            class="absolute -bottom-1.5 left-6 w-4 h-4 bg-[#5EC8CA] rounded-full shadow-sm"
+          >
+          </div>
+          <div
+            class="absolute -bottom-5 left-2 w-2 h-2 bg-[#5EC8CA] rounded-full shadow-sm"
+          >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute inset-0 bg-primary/30 rounded-3xl blur-2xl group-hover:bg-primary/50 transition-all duration-500 scale-90"
+      >
+      </div>
+      <Image
+        src={programming_1}
+        alt="Programming Illustration"
+        class="relative w-48 h-48 md:w-64 md:h-64 object-contain animate-glow rounded-3xl"
+      />
+    </div>
+
+    <h1
+      class="text-[clamp(1.75rem,8.5vw,4rem)] font-black mb-8 leading-none text-light-text dark:text-white reveal reveal-up"
+    >
+      <span class="text-[clamp(1.75rem,8.5vw,1rem)]"
+        >Hola! soy Lourdes Juárez
+      </span>
+      <span
+        class="flex
+        flex-wrap
+        justify-center
+        text-[#F3D0D3]
+        dark: text-[#F6846B]
+        whitespace-nowrap
+        mt-2"
+      >
+        {
+          "Desarrolladora Web."
+            .split(" ")
+            .map((word, wordIndex, wordsArray) => (
+              <span class="inline-block">
+                {word.split("").map((char, charIndex) => {
+                  const currentPos =
+                    wordsArray.slice(0, wordIndex).join(" ").length +
+                    (wordIndex > 0 ? 1 : 0) +
+                    charIndex;
+                  const hue =
+                    currentPos < 5
+                      ? 400 - currentPos * 20
+                      : 160 + (9 - currentPos) * 10;
+                  const color = `oklch(0.7 0.2 ${hue})`;
+                  return (
+                    <span
+                      class="char-hover"
+                      style={`--char-color: ${color}; animation-delay: ${(currentPos + 1) * 0.0}s`}
+                    >
+                      {char}
+                    </span>
+                  );
+                })}
+
+                {wordIndex < wordsArray.length - 1 && <span>&nbsp;</span>}
+              </span>
+            ))
+        }
+      </span>
+    </h1>
+
+    <p
+      class="text-lg md:text-xl text-light-text/60 dark:text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed reveal reveal-up stagger-1"
+    >
+      Diseño interfaces y experiencias digitales pensadas para las personas. Mi
+      objetivo es convertir ideas en productos intuitivos, claros y fáciles de
+      entender.
+    </p>
+
+    <div
+      class="flex flex-col sm:flex-row gap-4 justify-center reveal reveal-up stagger-2"
+    >
+      <a
+        href="#projects"
+        class="px-8 py-4 rounded-xl bg-light-text dark:bg-white text-white dark:text-black font-bold hover:scale-105 transition-transform"
+      >
+        Ver Proyectos
+      </a>
+      <a
+        href="#contact"
+        class="px-8 py-4 rounded-xl glass font-bold text-light-text dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+      >
+        Hablemos
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes wordRotate {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    1% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    11.5% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    12.5% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-word-rotate {
+    animation: wordRotate linear infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    33% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    66% {
+      transform: translateY(5px) translateX(-5px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

@@ -1,111 +1,121 @@
 ---
-import { Image } from 'astro:assets';
-import logo_ljp from '../assets/logo_ljp.png';
-import ThemeToggle from './ThemeToggle.astro';
-import MenuIcon from '../icons/MenuIcon.astro';
-import CloseIcon from '../icons/CloseIcon.astro';
+import { Image } from "astro:assets";
+import logo_ljp from "../assets/logo_ljp.png";
+import ThemeToggle from "./ThemeToggle.astro";
+import MenuIcon from "../icons/MenuIcon.astro";
+import CloseIcon from "../icons/CloseIcon.astro";
 ---
 
-<header
-  class='flex justify-between items-center mx-auto px-4 sm:px-8 py-3 sticky top-4 w-full xl:w-[1120px]
-z-10 rounded-2xl
-bg-white/30 dark:bg-gray-900/30
-backdrop-blur-xl
-border border-white/40 dark:border-white/10
-shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]
-dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]
-before:absolute before:inset-0 before:rounded-2xl
-before:bg-gradient-to-br before:from-white/20 before:to-transparent
-dark:before:from-white/5
-before:pointer-events-none before:z-[-1]
-relative overflow-visible'
->
-  <Image
-    class='rounded-full w-10 h-10 sm:w-10 sm:h-10 ring-2 ring-white/50 dark:ring-white/20'
-    src={logo_ljp}
-    alt='ljp photo'
-  />
-
-  <!-- Desktop nav -->
-  <nav class='hidden sm:flex flex-row items-center gap-x-4 sm:gap-x-8 text-sm'>
-    <a
-      class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-submarine-400 dark:after:bg-submarine-300 after:transition-all after:duration-300 hover:after:w-full'
-      href='#aboutme'>Sobre mí</a
-    >
-    <a
-      class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-submarine-400 dark:after:bg-submarine-300 after:transition-all after:duration-300 hover:after:w-full'
-      href='#projects'>Proyectos</a
-    >
-    <a
-      class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-submarine-400 dark:after:bg-submarine-300 after:transition-all after:duration-300 hover:after:w-full'
-      href='#contactform'>Contacto</a
-    >
-    <ThemeToggle />
-  </nav>
-
-  <!-- Mobile nav -->
-  <div class='flex sm:hidden items-center gap-3'>
-    <ThemeToggle />
-    <button
-      id='menu-toggle'
-      type='button'
-      class='flex items-center justify-center p-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-white/20 dark:hover:bg-gray-700/50 transition-colors'
-      aria-label='Abrir menú'
-    >
-      <MenuIcon class='menu-icon w-6 h-6' />
-      <CloseIcon class='close-icon hidden w-6 h-6' />
-    </button>
-  </div>
-
-  <!-- Mobile menu dropdown -->
+<header class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
   <div
-    id='mobile-menu'
-    class='hidden sm:hidden absolute top-full left-0 right-0 mt-2 mx-4 p-4 rounded-2xl
-    bg-white dark:bg-gray-900
-    border border-gray-200 dark:border-gray-700
-    shadow-lg'
+    class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3 border border-white/10 dark:border-white/10 shadow-2xl relative overflow-visible"
   >
-    <nav class='flex flex-col gap-4 text-sm'>
-      <a
-        class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 py-2'
-        href='#aboutme'>Sobre mí</a
+
+    <a href="/" class="flex items-center gap-3 group">
+      <span class="text-xl font-black tracking-tighter gradient-text">LJP.</span
       >
-      <a
-        class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 py-2'
-        href='#projects'>Proyectos</a
+
+
+      <nav class="hidden lg:flex items-center gap-8">
+        <a
+          href="#about"
+          class="text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors"
+          >Sobre mí</a
+        >
+        <a
+          href="#projects"
+          class="text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors"
+          >Proyectos</a
+        >
+        <a
+          href="#contact"
+          class="text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors"
+          >Contacto</a
+        >
+
+        <div class="w-px h-6 bg-black/10 dark:bg-white/10 mx-2"></div>
+
+        <ThemeToggle />
+      </nav>
+
+      <div class="flex items-center gap-4 lg:hidden">
+        <ThemeToggle />
+        <button
+          id="menu-trigger"
+          class="lg:hidden p-3 bg-[var(--card-bg)] border-[3px] border-[var(--border-color)] rounded-full shadow-[2px_2px_0px_var(--shadow-color)] text-[var(--dark)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-[transform,box-shadow,background-color] duration-100 pointer-events-auto"
+          aria-label="Abrir menú"
+        >
+          <MenuIcon class="w-6 h-6" />
+        </button>
+      </div>
+
+
+      <div
+        id="mobile-dropdown"
+        class="absolute top-full left-0 right-0 mt-4 mx-0 bg-light-surface dark:bg-surface-800 rounded-2xl p-6 border border-black/10 dark:border-white/10 shadow-3xl opacity-0 invisible scale-95 transition-all duration-300 pointer-events-none lg:hidden"
       >
-      <a
-        class='text-gray-800 dark:text-gray-200 hover:text-submarine-500 dark:hover:text-submarine-300 font-medium transition-colors duration-300 py-2'
-        href='#contactform'>Contacto</a
-      >
-    </nav>
+        <nav class="flex flex-col gap-6 text-center">
+          <a
+            href="#about"
+            class="mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary"
+            >Sobre mí</a
+          >
+          <a
+            href="#projects"
+            class="mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary"
+            >Proyectos</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary border-t border-black/10 dark:border-white/10 pt-6"
+            >Contacto</a
+          >
+        </nav>
+      </div>
+    </a>
   </div>
+
+  <script is:inline>
+    (function () {
+      const trigger = document.getElementById("menu-trigger");
+      const dropdown = document.getElementById("mobile-dropdown");
+
+      if (!trigger || !dropdown) return;
+
+      const toggleMenu = () => {
+        const isOpen = !dropdown.classList.contains("invisible");
+        if (isOpen) {
+          dropdown.classList.add(
+            "opacity-0",
+            "invisible",
+            "scale-95",
+            "pointer-events-none",
+          );
+          trigger.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--dark)]"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>`;
+        } else {
+          dropdown.classList.remove(
+            "opacity-0",
+            "invisible",
+            "scale-95",
+            "pointer-events-none",
+          );
+          trigger.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--dark)]"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
+        }
+      };
+
+      trigger.addEventListener("click", toggleMenu);
+
+      const links = dropdown.querySelectorAll(".mobile-link");
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          dropdown.classList.add(
+            "opacity-0",
+            "invisible",
+            "scale-95",
+            "pointer-events-none",
+          );
+        });
+      });
+    })();
+  </script>
 </header>
-
-<script is:inline>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = menuToggle?.querySelector('.menu-icon');
-  const closeIcon = menuToggle?.querySelector('.close-icon');
-
-  menuToggle?.addEventListener('click', () => {
-    const isHidden = mobileMenu?.classList.contains('hidden');
-    mobileMenu?.classList.toggle('hidden');
-    if (isHidden) {
-      menuIcon?.classList.add('hidden');
-      closeIcon?.classList.remove('hidden');
-    } else {
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-    }
-  });
-
-  // Close menu when clicking on a link
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-    });
-  });
-</script>

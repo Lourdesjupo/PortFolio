@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-primary: oklch(0.7 0.2 250);
+    --color-secondary: oklch(0.6 0.25 310);
+    --color-accent: oklch(0.85 0.15 160);
+    --color-accent-blue: oklch(0.687 0.1758 245.87);
+    --color-primary-gradient: oklch(0.7772 0.0984 196.98);
+    --color-secondary-gradient: oklch(0.7772 0.0242 196.98);
+    --color-accent-gradient: oklch(0.85 0.1102 73.01);
+    /* Dark Mode Colors */
+    --color-surface-900: oklch(0.15 0.02 250);
+    --color-surface-800: oklch(0.2 0.03 250);
+    --color-surface-700: oklch(0.25 0.04 250);
+
+    /* Light Mode Colors */
+    --color-light-bg: oklch(0.98 0.01 250);
+    --color-light-surface: oklch(0.95 0.02 250);
+    --color-light-text: oklch(0.2 0.02 250);
+
+    --font-sans: "Inter", "Outfit", system-ui, sans-serif;
+}
+
+@layer base {
+    :root {
+        --card-bg: oklch(0.95 0.02 250);
+        --border-color: oklch(0.2 0.02 250);
+        --shadow-color: oklch(0.2 0.02 250);
+        --dark: oklch(0.2 0.02 250);
+    }
+
+    .dark {
+        --card-bg: oklch(0.2 0.03 250);
+        --border-color: var(--color-primary);
+        --shadow-color: var(--color-primary);
+        --dark: white;
+    }
+
+    body {
+        /* Default: Light Mode */
+        @apply bg-light-bg text-light-text font-sans antialiased selection:bg-primary/30;
+        @apply transition-colors duration-300;
+    }
+
+    /* Dark Mode Overrides */
+    .dark body {
+        @apply bg-surface-900 text-white;
+    }
+}
+
+.glass {
+    /* Default: Light Mode Glass */
+    @apply bg-black/5 backdrop-blur-xl border border-black/10;
+
+    /* Dark Mode Glass */
+    .dark & {
+        @apply bg-white/5 border-white/10;
+    }
+}
+
+.gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-gradient via-secondary-gradient to-accent-gradient;
+}
+
+.animate-glow {
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes wavy {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.char-hover {
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.char-hover:hover {
+    animation: wavy 0.3s ease-in-out;
+    color: var(--char-color);
+    filter: drop-shadow(0 0 8px var(--char-color));
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px oklch(66.906% 0.18376 248.826 / 0.5));
+    }
+
+    to {
+        filter: drop-shadow(0 0 20px oklch(62.924% 0.25604 26.405 / 0.8));
+    }
+}
+
+/* Reveal System */
+.reveal {
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+}
+
+.reveal-scale {
+    transform: scale(0.9);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Staggering utility */
+.stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-4 {
+    transition-delay: 0.4s;
+}
+
+.stagger-5 {
+    transition-delay: 0.5s;
+}

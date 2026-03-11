@@ -1,0 +1,178 @@
+---
+const experiences = [
+  {
+    date: "2018-2022",
+    title: "Ecommerce Manager",
+    company: "Cerygres",
+    description: "Coordinación con el departamento técnico y el CTO para el desarrollo y mejora de proyectos digitales, colaborando con marketing en campañas, seguimiento de incidencias, optimización de la experiencia de usuario (UX), análisis de métricas",
+  },
+  {
+    date: "2024 - Actualidad ",
+    title: "Fullstack Developer",
+    company: "AstracodeLAB",
+    description: "Desarrollo de páginas web y soluciones web personalizadas para autónomos y pymes. Trabajo con tecnologías modernas como React, Astro, Node.js, PostgreSQL, SQL Server y JavaScript",
+  },
+  {
+    date: "2010 - 2018",
+    title: "Team Lead en Proyectos de Digitalización",
+    company: "Indra BPO",
+    description: "Reestructuración y optimización de procesos operativos, liderazgo de equipos y colaboración estrecha con el departamento técnico en la definición de especificaciones funcionales, realización de pruebas de aplicaciones antes de su lanzamiento (...)",
+  }
+];
+---
+
+<section id="experience" class="py-24 relative overflow-hidden bg-white/5 dark:bg-black/20" aria-labelledby="exp-title">
+  <div class="absolute inset-0 -z-10" aria-hidden="true">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-6">
+    <header class="text-center mb-20 reveal reveal-up">
+      <h2 id="exp-title" class="text-4xl md:text-6xl font-black tracking-tighter text-light-text dark:text-white mb-4">
+        Mi <span class="text-[#5EC8CA]">Recorrido.</span>
+      </h2>
+      <p class="text-light-text/60 dark:text-white/60 max-w-lg mx-auto">
+        Haz clic en las tarjetas para descubrir los detalles de cada etapa.
+      </p>
+    </header>
+
+    <ol class="relative h-auto md:h-[500px] flex flex-col md:flex-row items-center md:items-end justify-center md:perspective-[1500px] gap-8 md:gap-0 pb-12 list-none">
+      {experiences.map((exp, index) => {
+        const rotations = ["md:-rotate-12", "md:rotate-0", "md:rotate-12"];
+        const translates = ["md:-translate-x-24 lg:md:-translate-x-48", "md:translate-x-0 md:-translate-y-8", "md:translate-x-24 lg:md:translate-x-48"];
+        const zIndexes = ["z-10", "md:z-20", "z-10"];
+        
+        return (
+          <li 
+            class={`card-container relative md:absolute cursor-pointer transition-all duration-700 ease-out hover:z-50 hover:-translate-y-12 reveal reveal-scale stagger-${index + 1} ${rotations[index]} ${translates[index]} ${zIndexes[index]}`}
+            data-index={index}
+            role="button"
+            aria-expanded="false"
+            aria-label={`Ver detalles de ${exp.title} en ${exp.company}`}
+          >
+            <article class="card-inner relative w-[260px] h-[440px] md:w-[320px] md:h-[420px] transition-transform duration-700 preserve-3d">
+              
+              <!-- FACE A: The Visual Hook -->
+              <div class="card-front absolute inset-0 backface-hidden rounded-sm shadow-2xl paper-texture border-l-[12px] border-black/5 bg-[#FDFBF7] p-8 flex flex-col justify-between overflow-hidden">
+                <!-- Notebook holes -->
+                <div class="absolute left-[-22px] top-0 bottom-0 flex flex-col justify-around py-8" aria-hidden="true">
+                  {[...Array(6)].map(() => <div class="w-4 h-4 rounded-full bg-black/20 shadow-inner"></div>)}
+                </div>
+
+                <header class="relative z-10">
+                  <span class="text-[10px] font-black tracking-[0.2em] uppercase text-black/30 mb-2 block">Secret File #{index + 1}</span>
+                  <h3 class="text-2xl md:text-3xl font-black text-black leading-tight mt-4">
+                    {exp.title.split(' ').map((word, i) => (
+                      <span class={i % 2 === 0 ? "text-black" : "text-[#5EC8CA] block"}>{word} </span>
+                    ))}
+                  </h3>
+                </header>
+
+                <footer class="mt-auto relative z-10 flex items-center justify-end">
+                   <div class="w-12 h-12 rounded-full bg-[#5EC8CA]/10 flex items-center justify-center border border-[#5EC8CA]/20" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#5EC8CA]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                   </div>
+                   <span class="text-[8px] font-mono  uppercase font-bold text-black/60  pl-5 font-serif">Siguiente página</span>
+                </footer>
+
+                <!-- Torn Decoration (Only Desktop) -->
+                <div class="hidden md:block absolute bottom-0 left-0 right-0 h-4 bg-white clip-torn rotate-180 scale-y-150 origin-bottom" aria-hidden="true"></div>
+                <div class="absolute top-10 right-10 w-20 h-20 bg-[#5EC8CA]/10 rounded-full blur-2xl -z-10" aria-hidden="true"></div>
+              </div>
+
+              <!-- FACE B -->
+              <div class="card-back absolute inset-0 backface-hidden rounded-sm shadow-2xl rotate-y-180 bg-[#f9f7f2] p-8 border-l-[12px] border-black/5 paper-texture overflow-hidden flex flex-col">
+                <div class="absolute left-[-22px] top-0 bottom-0 flex flex-col justify-around py-8" aria-hidden="true">
+                  {[...Array(6)].map(() => <div class="w-4 h-4 rounded-full bg-black/20 shadow-inner"></div>)}
+                </div>
+
+                <header class="mb-6">
+                  <time class="inline-block px-3 py-1 bg-black text-white text-[10px] font-bold rounded-sm mb-4 uppercase tracking-tighter">
+                    {exp.date}
+                  </time>
+                  <p class="text-xl font-black text-black mb-1">{exp.company}</p>
+                  <div class="w-10 h-1 bg-[#5EC8CA] rounded-full" aria-hidden="true"></div>
+                </header>
+
+                <div class="flex-grow">
+                  <p class="text-sm md:text-base text-black/70 leading-relaxed font-medium italic">
+                    "{exp.description}"
+                  </p>
+                </div>
+
+                <footer class="mt-auto flex justify-end">
+                   <div class="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center" aria-hidden="true">
+                      <span class="text-[8px] font-black">X</span>
+                   </div>
+                </footer>
+              </div>
+            </article>
+          </li>
+        )
+      })}
+    </ol>
+
+    <div class="mt-12 md:mt-0 text-center relative z-30 reveal reveal-up stagger-3">
+      <a
+        href="/Lourdes_Juarez.pdf"
+        download
+        class="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-light-text dark:bg-white text-white dark:text-black font-black hover:scale-105 transition-all shadow-2xl group border border-white/10 outline-none focus:ring-2 focus:ring-[#5EC8CA]"
+        aria-label="Descargar mi Currículum Vitae completo en PDF"
+      >
+        <span class="tracking-tight">Descargar CV Completo</span>
+        <div class="w-8 h-8 rounded-full bg-[#5EC8CA]/20 flex items-center justify-center group-hover:bg-[#5EC8CA]/40 transition-colors" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#5EC8CA] group-hover:translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .perspective-\[1500px\] { perspective: 1500px; }
+  .preserve-3d { transform-style: preserve-3d; }
+  .backface-hidden { backface-visibility: hidden; }
+  .rotate-y-180 { transform: rotateY(180deg); }
+
+  .paper-texture {
+    background-image: url("https://www.transparenttextures.com/patterns/paper.png");
+    clip-path: none;
+  }
+
+
+  .clip-torn {
+    clip-path: polygon(0% 100%, 10% 85%, 20% 100%, 30% 90%, 40% 100%, 50% 85%, 60% 100%, 70% 90%, 80% 100%, 90% 85%, 100% 100%);
+  }
+
+  .card-container.is-flipped .card-inner { transform: rotateY(180deg); }
+</style>
+
+<script>
+  function setupExperienceCards() {
+    const cards = document.querySelectorAll('.card-container');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const isFlipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-expanded', isFlipped.toString());
+        
+        const htmlCard = card as HTMLElement;
+        if (isFlipped) {
+          htmlCard.style.zIndex = '40';
+          htmlCard.style.transform = window.innerWidth < 768 
+            ? 'scale(1.05)' 
+            : 'translateY(-40px) scale(1.05)';
+        } else {
+          const index = card.getAttribute('data-index');
+          if (window.innerWidth >= 768) {
+             htmlCard.style.zIndex = (index === '1' ? '20' : '10');
+          } else {
+             htmlCard.style.zIndex = '10';
+          }
+          htmlCard.style.transform = '';
+        }
+      });
+    });
+  }
+  setupExperienceCards();
+  document.addEventListener('astro:after-swap', setupExperienceCards);
+</script>
