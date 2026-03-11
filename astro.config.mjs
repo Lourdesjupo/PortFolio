@@ -7,5 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
+  },
+  site: 'https://lourdesjupo.github.io/',
+  outDir: 'dist',
+  build: {
+    assets: 'assets',
   }
 });
