@@ -1,0 +1,128 @@
+---
+
+---
+
+<section id="about" class="py-24 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+        <header class="max-w-5xl mx-auto mb-20 px-6 reveal reveal-left">
+            <h2
+                id="titulo-sobre-mi"
+                class="group text-4xl md:text-6xl font-black text-light-text dark:text-white leading-tight"
+            >
+                Sobre <span class="text-[#F3D0D3]">mi</span>
+                <span
+                    id="animate-dot-fall"
+                    class="inline-block animate-dot-fall text-[#F6846B]">.</span
+                >
+            </h2>
+        </header>
+        <p
+            class="max-w-6xl mx-auto px-6 text-lg md:text-xl text-light-text/70 dark:text-white/70 font-medium leading-relaxed mb-32 text-justify reveal reveal-up stagger-1"
+        >
+            En mi trayectoria profesional he trabajado en áreas como la
+            coordinación de proyectos, la gestión de páginas e-commerce en
+            PrestaShop y la digitalización e indexación de datos. Estas
+            experiencias me permitieron desarrollar una visión organizada del
+            trabajo digital. <br /><br />
+            Recientemente decidí dar un giro a mi carrera profesional y formarme como
+            desarrolladora Full Stack. Actualmente sigo ampliando mi experiencia trabajando
+            en proyectos reales como
+            <a
+                href="https://astracodelab.com/"
+                class="text-accent-blue font-bold hover:underline transition-all"
+            >
+                Astracodelab</a
+            >, donde continúo desarrollando soluciones web y consolidando mis
+            conocimientos en desarrollo y producto digital.
+        </p>
+    </div>
+</section>
+<style>
+    .animate-dot-fall {
+        display: inline-block;
+        animation: dot-journey 4s forwards;
+        transform-origin: bottom;
+    }
+
+    @keyframes dot-journey {
+        0% {
+            transform: translate(-400px, 10px);
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
+        }
+
+        15% {
+            transform: translate(-115px, -35px) scale(0.9, 1.1);
+            animation-timing-function: ease-out;
+        }
+        25% {
+            transform: translate(-90px, 0px) scale(1.2, 0.8);
+            animation-timing-function: ease-in;
+        }
+
+        
+        35% {
+
+            transform: translate(-65px, -20px) scale(0.95, 1.05);
+            animation-timing-function: ease-out;
+        }
+        45% {
+
+            transform: translate(-40px, 0px) scale(1.1, 0.9);
+            animation-timing-function: ease-in;
+        }
+
+        55% {
+
+            transform: translate(-20px, -8px) scale(1);
+            animation-timing-function: ease-out;
+        }
+        65% {
+
+            transform: translate(0px, 0px) scale(1.05, 0.95);
+            animation-timing-function: ease-in;
+        }
+
+        75% {
+            transform: translate(0, 0) scale(1);
+        }
+        85% {
+            transform: translate(0, -2px);
+        } 
+        100% {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+</style>
+<script>
+    const setupAboutObserver = () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const punto = document.getElementById("animate-dot-fall");
+                    if (!punto) return;
+
+                    if (entry.isIntersecting) {
+                        punto.classList.remove("opacity-0");
+                        punto.classList.remove("animate-dot-fall");
+                        void punto.offsetWidth;
+                        punto.classList.add("animate-dot-fall");
+                    } else {
+                        punto.classList.remove("animate-dot-fall");
+                        punto.classList.add("opacity-0");
+                    }
+                });
+            },
+            { threshold: 0.5 },
+        );
+
+        const titulo = document.getElementById("titulo-sobre-mi");
+        if (titulo) observer.observe(titulo);
+    };
+
+    setupAboutObserver();
+    document.addEventListener("astro:after-swap", setupAboutObserver);
+</script>

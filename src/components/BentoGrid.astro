@@ -1,0 +1,186 @@
+---
+import { Image } from "astro:assets";
+import yosoysteam from "../assets/projects/yosoysteam.png";
+import qjubiloso from "../assets/projects/qjubiloso.png";
+import alexisnavas from "../assets/projects/alexis_navas.png";
+import astracodelab from "../assets/projects/astracodelab.png";
+import lliuree from "../assets/projects/lliuree.png";
+
+const projects = [
+    {
+        title: "YoSoySteam",
+        desc: "Desarrollo de una plataforma educativa orientada a fomentar la igualdad de género en el ámbito STEAM. Conecta a estudiantes con empresas para impulsar oportunidades laborales y facilitar la captación de talento.",
+        img: yosoysteam,
+        link: "https://yosoysteam.es",
+        tags: ["React", "sass", "Node.js", "Express.js", "PostgreSQL"],
+        size: "lg",
+        color: "primary",
+        grid: "md:col-span-2 md:row-span-2",
+    },
+    {
+        title: "QJubiloso",
+        desc: "Desarrollo de una página web para servicios de cuidados a domicilio dirigidos a personas mayores y dependientes, con un diseño intuitivo y accesible orientado a mejorar la experiencia de uso de mayores y familiares. ",
+        img: qjubiloso,
+        link: "https://qjubiloso.es",
+        tags: ["React", "css"],
+        size: "sm",
+        color: "primary",
+        grid: "md:col-span-1 md:row-span-1",
+    },
+    {
+        title: "Alexis Navas",
+        desc: "Creación de un portfolio profesional para un experto perito judicial en arte y pericia caligráfica.",
+        img: alexisnavas,
+        link: "https://alexisnavas.com",
+        tags: ["html", "css"],
+        size: "sm",
+        color: "primary",
+        grid: "md:col-span-1 md:row-span-1",
+    },
+    {
+        title: "AstracodeLAB",
+        desc: "Agencia de desarrollo y diseño.",
+        img: astracodelab,
+        link: "https://astracodelab.com",
+        tags: ["astro", "sass"],
+        size: "sm",
+        color: "primary",
+        grid: "md:col-span-1 md:row-span-1",
+    },
+    {
+        title: "Lliuree Yoga",
+        desc: "Desarrollo web para un estudio de yoga y meditación, con un diseño limpio, armonioso y enfocado en transmitir calma y bienestar.",
+        img: lliuree,
+        link: "https://lliuree.com",
+        tags: ["Astro", "sass"],
+        size: "lg",
+        color: "primary",
+        grid: "md:col-span-2 md:row-span-2",
+        align: "right",
+        bgColor: "#E7ECF2",
+    },
+];
+---
+
+<section id="projects" class="py-24">
+    <header
+        class="max-w-2xl mx-auto px-6 flex items-center gap-4 mb-16 reveal reveal-left"
+    >
+        <h2
+            class="text-4xl md:text-6xl font-black text-light-text dark:text-white leading-tight"
+        >
+            Últimos <span class="text-[#5EC8CA]"
+                >proyectos con AstracodeLAB.</span
+            >
+        </h2>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {
+                projects.map((p, index) => (
+                    <article
+                        class={`${p.grid} glass rounded-[2.5rem] p-8 relative overflow-hidden group flex flex-col reveal ${index % 2 === 0 ? "reveal-left" : "reveal-right"} stagger-${(index % 3) + 1}`}
+                    >
+                        <a
+                            href={p.link}
+                            target="_blank"
+                            rel="noopener"
+                            aria-label={`Ver ${p.title}`}
+                            class={`absolute top-6 ${p.align === "right" ? "left-6" : "right-6"} z-20 p-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black dark:text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-${p.color} hover:border-${p.color} hover:text-white`}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                            >
+                                <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            </svg>
+                        </a>
+
+                        <figure
+                            class={`relative z-10 ${p.size === "sm" ? "mb-6 h-48" : "mb-0 rounded-2xl overflow-hidden transition-transform duration-700"}`}
+                        >
+                            <Image
+                                src={p.img}
+                                alt={p.title}
+                                class={`${p.size === "sm" ? "object-contain scale-110 group-hover:scale-120" : "object-cover shadow-xl transform group-hover:scale-105"} w-full h-full transition-transform duration-700`}
+                            />
+                        </figure>
+
+                        <header
+                            class={`relative z-10 mt-8 ${p.align === "right" ? "text-right items-end" : ""} flex flex-col mt-auto`}
+                        >
+                            <h3
+                                class={`${p.size === "lg" ? "text-3xl" : "text-xl"} font-black text-light-text dark:text-white mb-2`}
+                            >
+                                {p.title}
+                            </h3>
+                            <p
+                                class={`${p.size === "lg" ? "text-base" : "text-sm"}text-justify text-light-text/60 dark:text-white/60 mb-4 max-w-md font-medium leading-relaxed`}
+                            >
+                                {p.desc}
+                            </p>
+                            {p.tags && (
+                                <ul
+                                    class={`flex flex-wrap gap-2 ${p.align === "right" ? "justify-end" : ""}`}
+                                >
+                                    {p.tags.map((tag) => (
+                                        <li
+                                            class={`px-3 py-1 bg-${p.color}/10 text-${p.color} text-[10px] font-bold rounded-lg border border-${p.color}/20 uppercase tracking-wider`}
+                                        >
+                                            {tag}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </header>
+                    </article>
+                ))
+            }
+
+            <a
+                href="https://astracodelab.com/"
+                target="_blank"
+                rel="noopener"
+                class="md:col-span-1 md:row-span-1 glass rounded-[2.5rem] p-8 flex items-center justify-center gap-4 group hover:scale-[1.02] transition-all duration-500 border-white/5"
+            >
+                <span
+                    class="p-3 bg-accent/10 text-[#5EC8CA] rounded-full inline-block"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                    >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 8v8M8 12h8"></path>
+                    </svg>
+                </span>
+                <span
+                    class="text-base font-black text-light-text dark:text-white uppercase tracking-tighter"
+                >
+                    Más sobre AstracodeLAB
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .glass {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        transition: all 0.5s ease;
+    }
+    .glass:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.5);
+    }
+</style>
