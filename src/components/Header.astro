@@ -1,73 +1,73 @@
 ---
-import { Image } from "astro:assets";
-import logo_ljp from "../assets/logo_ljp.png";
-import ThemeToggle from "./ThemeToggle.astro";
-import MenuIcon from "../icons/MenuIcon.astro";
-import CloseIcon from "../icons/CloseIcon.astro";
+import { Image } from 'astro:assets';
+import logo_ljp from '../assets/logo_ljp.png';
+import ThemeToggle from './ThemeToggle.astro';
+import MenuIcon from '../icons/MenuIcon.astro';
+import CloseIcon from '../icons/CloseIcon.astro';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+<header class='fixed top-0 left-0 right-0 z-50 px-6 py-4'>
   <div
-    class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3 border border-white/10 dark:border-white/10 shadow-2xl relative overflow-visible"
+    class='max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3 border border-white/10 dark:border-white/10 shadow-2xl relative overflow-visible'
   >
+    <!-- Logo area -->
+    <a href='/' class='flex items-center gap-3 group'>
+      <span class='text-xl font-black tracking-tighter gradient-text'>LJP.</span>
 
-    <a href="/" class="flex items-center gap-3 group">
-      <span class="text-xl font-black tracking-tighter gradient-text">LJP.</span
-      >
-
-
-      <nav class="hidden lg:flex items-center gap-8">
+      <!-- Desktop Menu -->
+      <nav class='hidden lg:flex items-center gap-8'>
         <a
-          href="#about"
-          class="text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors"
+          href='#about'
+          class='text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors'
           >Sobre mí</a
         >
         <a
-          href="#projects"
-          class="text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors"
+          href='#projects'
+          class='text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors'
           >Proyectos</a
         >
         <a
-          href="#contact"
-          class="text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors"
+          href='#contact'
+          class='text-sm font-bold uppercase tracking-widest text-light-text/70 dark:text-white/70 hover:text-primary transition-colors'
           >Contacto</a
         >
 
-        <div class="w-px h-6 bg-black/10 dark:bg-white/10 mx-2"></div>
+        <div class='w-px h-6 bg-black/10 dark:bg-white/10 mx-2'></div>
 
         <ThemeToggle />
       </nav>
 
-      <div class="flex items-center gap-4 lg:hidden">
+      <!-- Mobile Button -->
+      <div class='flex items-center gap-4 lg:hidden'>
         <ThemeToggle />
         <button
-          id="menu-trigger"
-          class="lg:hidden p-3 bg-[var(--card-bg)] border-[3px] border-[var(--border-color)] rounded-full shadow-[2px_2px_0px_var(--shadow-color)] text-[var(--dark)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-[transform,box-shadow,background-color] duration-100 pointer-events-auto"
-          aria-label="Abrir menú"
+          id='menu-trigger'
+          class='lg:hidden p-3 bg-[var(--card-bg)] border-[3px] border-[var(--border-color)] rounded-full shadow-[2px_2px_0px_var(--shadow-color)] text-[var(--dark)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-[transform,box-shadow,background-color] duration-100 pointer-events-auto'
+          aria-label='Abrir menú'
         >
-          <MenuIcon class="w-6 h-6" />
+          <MenuIcon class='w-6 h-6' />
         </button>
       </div>
 
-
+      <!-- Mobile Menu Dropdown -->
       <div
-        id="mobile-dropdown"
-        class="absolute top-full left-0 right-0 mt-4 mx-0 bg-light-surface dark:bg-surface-800 rounded-2xl p-6 border border-black/10 dark:border-white/10 shadow-3xl opacity-0 invisible scale-95 transition-all duration-300 pointer-events-none lg:hidden"
+        id='mobile-dropdown'
+        class='absolute top-full left-0 right-0 mt-4 mx-0 bg-light-surface dark:bg-surface-800 rounded-2xl p-6 border border-black/10 dark:border-white/10 shadow-3xl opacity-0 invisible scale-95 transition-all duration-300 pointer-events-none lg:hidden'
       >
-        <nav class="flex flex-col gap-6 text-center">
+        <nav class='flex flex-col gap-6 text-center'>
           <a
-            href="#about"
-            class="mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary"
+            href='#about'
+            class='mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary'
             >Sobre mí</a
           >
           <a
-            href="#projects"
-            class="mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary"
+            href='#projects'
+            class='mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary'
             >Proyectos</a
           >
           <a
-            href="#contact"
-            class="mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary border-t border-black/10 dark:border-white/10 pt-6"
+            href='#contact'
+            class='mobile-link text-lg font-black uppercase tracking-widest text-light-text dark:text-white hover:text-primary border-t border-black/10 dark:border-white/10 pt-6'
             >Contacto</a
           >
         </nav>
@@ -77,43 +77,29 @@ import CloseIcon from "../icons/CloseIcon.astro";
 
   <script is:inline>
     (function () {
-      const trigger = document.getElementById("menu-trigger");
-      const dropdown = document.getElementById("mobile-dropdown");
+      const trigger = document.getElementById('menu-trigger');
+      const dropdown = document.getElementById('mobile-dropdown');
 
       if (!trigger || !dropdown) return;
 
       const toggleMenu = () => {
-        const isOpen = !dropdown.classList.contains("invisible");
+        const isOpen = !dropdown.classList.contains('invisible');
         if (isOpen) {
-          dropdown.classList.add(
-            "opacity-0",
-            "invisible",
-            "scale-95",
-            "pointer-events-none",
-          );
+          dropdown.classList.add('opacity-0', 'invisible', 'scale-95', 'pointer-events-none');
           trigger.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--dark)]"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>`;
         } else {
-          dropdown.classList.remove(
-            "opacity-0",
-            "invisible",
-            "scale-95",
-            "pointer-events-none",
-          );
+          dropdown.classList.remove('opacity-0', 'invisible', 'scale-95', 'pointer-events-none');
           trigger.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--dark)]"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
         }
       };
 
-      trigger.addEventListener("click", toggleMenu);
+      trigger.addEventListener('click', toggleMenu);
 
-      const links = dropdown.querySelectorAll(".mobile-link");
+      // Close menu when clicking links
+      const links = dropdown.querySelectorAll('.mobile-link');
       links.forEach((link) => {
-        link.addEventListener("click", () => {
-          dropdown.classList.add(
-            "opacity-0",
-            "invisible",
-            "scale-95",
-            "pointer-events-none",
-          );
+        link.addEventListener('click', () => {
+          dropdown.classList.add('opacity-0', 'invisible', 'scale-95', 'pointer-events-none');
         });
       });
     })();
