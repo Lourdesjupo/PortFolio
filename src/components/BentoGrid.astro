@@ -87,7 +87,7 @@ const projects = [
                             target="_blank"
                             rel="noopener"
                             aria-label={`Ver ${p.title}`}
-                            class={`absolute top-6 ${p.align === "right" ? "left-6" : "right-6"} z-20 p-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black dark:text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-${p.color} hover:border-${p.color} hover:text-white`}
+                            class={`absolute top-6 ${p.align === "right" ? "right-6 lg:left-6 lg:right-auto" : "right-6"} z-20 p-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black dark:text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-${p.color} hover:border-${p.color} hover:text-white`}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const projects = [
                         </figure>
 
                         <header
-                            class={`relative z-10 mt-8 ${p.align === "right" ? "text-right items-end" : ""} flex flex-col mt-auto`}
+                            class={`relative z-10 mt-8 ${p.align === "right" ? "lg:text-right lg:items-end" : ""} flex flex-col mt-auto`}
                         >
                             <h3
                                 class={`${p.size === "lg" ? "text-3xl" : "text-xl"} font-black text-light-text dark:text-white mb-2`}
@@ -120,13 +120,13 @@ const projects = [
                                 {p.title}
                             </h3>
                             <p
-                                class={`${p.size === "lg" ? "text-base" : "text-sm"}text-justify text-light-text/60 dark:text-white/60 mb-4 max-w-md font-medium leading-relaxed`}
+                                class={`${p.size === "lg" ? "text-base" : "text-sm"} text-justify text-light-text/60 dark:text-white/60 mb-4 max-w-md font-medium leading-relaxed`}
                             >
                                 {p.desc}
                             </p>
                             {p.tags && (
                                 <ul
-                                    class={`flex flex-wrap gap-2 ${p.align === "right" ? "justify-end" : ""}`}
+                                    class={`flex flex-wrap gap-2 ${p.align === "right" ? "lg:justify-end" : ""}`}
                                 >
                                     {p.tags.map((tag) => (
                                         <li

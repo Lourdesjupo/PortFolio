@@ -1,16 +1,16 @@
 ---
 const experiences = [
   {
-    date: "2018-2022",
-    title: "Ecommerce Manager",
-    company: "Cerygres",
-    description: "Coordinación con el departamento técnico y el CTO para el desarrollo y mejora de proyectos digitales, colaborando con marketing en campañas, seguimiento de incidencias, optimización de la experiencia de usuario (UX), análisis de métricas",
-  },
-  {
     date: "2024 - Actualidad ",
     title: "Fullstack Developer",
     company: "AstracodeLAB",
     description: "Desarrollo de páginas web y soluciones web personalizadas para autónomos y pymes. Trabajo con tecnologías modernas como React, Astro, Node.js, PostgreSQL, SQL Server y JavaScript",
+  },
+  {
+    date: "2018-2022",
+    title: "Ecommerce Manager",
+    company: "Cerygres",
+    description: "Coordinación con el departamento técnico y el CTO para el desarrollo y mejora de proyectos digitales, colaborando con marketing en campañas, seguimiento de incidencias, optimización de la experiencia de usuario (UX), análisis de métricas",
   },
   {
     date: "2010 - 2018",
@@ -38,9 +38,9 @@ const experiences = [
 
     <ol class="relative h-auto md:h-[500px] flex flex-col md:flex-row items-center md:items-end justify-center md:perspective-[1500px] gap-8 md:gap-0 pb-12 list-none">
       {experiences.map((exp, index) => {
-        const rotations = ["md:-rotate-12", "md:rotate-0", "md:rotate-12"];
-        const translates = ["md:-translate-x-24 lg:md:-translate-x-48", "md:translate-x-0 md:-translate-y-8", "md:translate-x-24 lg:md:translate-x-48"];
-        const zIndexes = ["z-10", "md:z-20", "z-10"];
+        const rotations = ["md:rotate-0", "md:-rotate-12", "md:rotate-12"];
+        const translates = ["md:translate-x-0 md:-translate-y-8", "md:-translate-x-24 lg:md:-translate-x-48", "md:translate-x-24 lg:md:translate-x-48"];
+        const zIndexes = ["md:z-20", "z-10", "z-10"];
         
         return (
           <li 
@@ -164,7 +164,7 @@ const experiences = [
         } else {
           const index = card.getAttribute('data-index');
           if (window.innerWidth >= 768) {
-             htmlCard.style.zIndex = (index === '1' ? '20' : '10');
+             htmlCard.style.zIndex = (index === '0' ? '20' : '10');
           } else {
              htmlCard.style.zIndex = '10';
           }
